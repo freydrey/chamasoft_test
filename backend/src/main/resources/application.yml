@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+cors:
+  allowed-origins: "*"
+  allowed-methods: "*"
+
+mpesa:
+  settings:
+    deposit:
+      dp_consumerkey: cACMtmS3dfIdbcrUREni8BxoEydWA98H
+      dp_consumersecret: aJOl5TOmtf4Zskx6
+      dp_passkey: bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919
+      dp_shortcode: 174379
+      dp_callbackurl: https://mydomain.com/path
+    withdraw:
+      dp_consumerkey: cACMtmS3dfIdbcrUREni8BxoEydWA98H
+      dp_consumersecret: aJOl5TOmtf4Zskx6
+      dp_initiatorname: testapi
+      dp_securitycredential: U2m3QPKd6mg/R5HQlcmcuCnGBaixXkmgeEtkAlGdijSHG3IzqMkmmVxPXW0YZ2MHpY4kPvszwCnLYVFxF08/LEY19x3LYGuo1e+zd3iAdIqH+pMAooFLpWDmWH3EX9IJUurY/1Zgkv3XmRBotfSD2Lz4aXu3clhbJ5SLBcuvmM3lV7c8F+en7BKpb3wsZtekCwRtFKv8PrT+j51YHrL9YGth07A4qVLKbTNefdMy1YBn1DIbF5D0fnHecSDm5A97HIrJ0kajOpZZtFovGEgSbjTmO7qZjN70etyo9AUFHd82MEiixqESF5n0HK7bTkXFXsDfCAFwaICCVR5+yWmV9g==
+      dp_shortcode: 600990
+      dp_commandid: BusinessPayment
+      dp_timeouturl: https://mydomain.com/b2c/queue
+      dp_resulturl: https://mydomain.com/b2c/result
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wallet
+    username: chamasoft
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  main:
+    web-application-type: servlet
